@@ -7,7 +7,7 @@
     "start": "sirv public --port 1234 --host"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "autoprefixer": "^9.8.6",
@@ -18,7 +18,7 @@
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.0.0",
     "svelte-preprocess": "^4.6.1",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^2.2.4"
   },
   "dependencies": {
     "cytoscape": "^3.18.0",
@@ -26,8 +26,12 @@
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-elk": "^1.2.2",
     "cytoscape-klay": "^3.1.4",
+    "dayjs": "^1.10.6",
+    "edit-distance": "^1.0.4",
     "lodash": "^4.17.20",
     "mathjs": "^9.2.0",
+    "matrix-js": "^1.5.1",
+    "minimum-edit-distance": "^1.1.7",
     "nanoid": "^3.1.20",
     "sirv-cli": "^1.0.0"
   }

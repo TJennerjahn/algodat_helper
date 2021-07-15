@@ -28,9 +28,57 @@
   // Hashing
   import Hashing from "./pages/Hashing.svelte";
   import Signatures from "./pages/Signatures.svelte";
+
+  // Branch and Bound
+  import BranchAndBound from "./pages/BranchAndBound.svelte";
+
+  // Genetic Algorithms
+  import GeneticAlgorithms from "./pages/GeneticAlgorithms.svelte";
+
+  // Graphs
+  import Graphs from "./pages/Graphs.svelte";
+
+  // Greedy Algorithms
+  import GreedyAlgorithms from './pages/GreedyAlgorithms.svelte';
+
+  // Dynamic Programming
+  import DynamicProgramming from './pages/DynamicProgramming.svelte';
+
+  // Crpytography
+  import Cryptography from './pages/Cryptography.svelte';
 </script>
 
 <Card>
+  <span slot="title">Graphen und Flüsse</span>
+  <span slot="content"><Graphs /></span>
+</Card>
+
+<Card>
+  <span slot="title">Dynamic Programming</span>
+  <span slot="content"><DynamicProgramming /></span>
+</Card>
+
+<Card>
+  <span slot="title">Greedy Algorithmen</span>
+  <span slot="content"><GreedyAlgorithms /></span>
+</Card>
+
+<Card>
+  <span slot="title">Genetische Algorithmen</span>
+  <span slot="content"><GeneticAlgorithms /></span>
+</Card>
+
+<Card>
+  <span slot="title">Branch and Bound</span>
+  <span slot="content"><BranchAndBound /></span>
+</Card>
+
+<Card>
+  <span slot="title">Cryptography</span>
+  <span slot="content"><Cryptography /></span>
+</Card>
+
+<!-- <Card>
   <span slot="title">Trees</span>
   <span slot="content"><Trees /></span>
 </Card>
@@ -78,7 +126,7 @@
 <Card>
   <span slot="title">Signatures</span>
   <span slot="content"><Signatures /></span>
-</Card>
+</Card> -->
 
 <div class="pb-2" />
 
