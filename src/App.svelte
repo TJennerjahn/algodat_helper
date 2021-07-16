@@ -38,6 +38,9 @@
   // Graphs
   import Graphs from "./pages/Graphs.svelte";
 
+  // Flow Network
+  import Flownetworks from './pages/Flownetworks.svelte';
+
   // Greedy Algorithms
   import GreedyAlgorithms from './pages/GreedyAlgorithms.svelte';
 
@@ -49,8 +52,13 @@
 </script>
 
 <Card>
-  <span slot="title">Graphen und Flüsse</span>
+  <span slot="title">Graphen</span>
   <span slot="content"><Graphs /></span>
+</Card>
+
+<Card>
+  <span slot="title">Flussnetzwerke</span>
+  <span slot="content"><Flownetworks /></span>
 </Card>
 
 <Card>
