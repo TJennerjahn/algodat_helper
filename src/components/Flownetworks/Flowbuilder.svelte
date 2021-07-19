@@ -125,6 +125,8 @@
             data: {
               id: nanoid(),
               label: e.cy.filter("node").length - 1,
+              isSource: false,
+              isSink: false,
             },
 
             renderedPosition: {

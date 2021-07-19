@@ -2,11 +2,13 @@
   import Flowbuilder from "../components/Flownetworks/Flowbuilder.svelte";
   import MinCutMaxFlow from "../components/Flownetworks/MinCutMaxFlow.svelte";
   import FordFulkerson from "../components/Flownetworks/FordFulkerson.svelte";
+  import PushRelabel from '../components/Flownetworks/PushRelabel.svelte';
 
   let menuItems = [
     { title: "Flowbuilder", active: true },
     { title: "Min-Cut Max-Flow", active: false },
     { title: "Ford-Fulkerson", active: false },
+    { title: "Push Relable", active: false }
   ];
 </script>
 
@@ -38,4 +40,8 @@
 
 {#if menuItems[2].active === true}
   <FordFulkerson />
+{/if}
+
+{#if menuItems[3].active === true}
+  <PushRelabel />
 {/if}
