@@ -6,7 +6,7 @@
     let menuItems = [
       {
         title: "Rucksackproblem",
-        active: false,
+        active: true,
       },
       {
         title: "Rundreise",
@@ -14,7 +14,7 @@
       },
       {
         title: "Bellman Ford",
-        active: true
+        active: false
       }
     ];
   </script>

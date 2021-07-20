@@ -32,8 +32,8 @@
   // Branch and Bound
   import BranchAndBound from "./pages/BranchAndBound.svelte";
 
-  // Genetic Algorithms
-  import GeneticAlgorithms from "./pages/GeneticAlgorithms.svelte";
+  // Stochastic Optimizers
+  import StochasticOptimizers from "./pages/StochasticOptimizers.svelte"
 
   // Graphs
   import Graphs from "./pages/Graphs.svelte";
@@ -72,8 +72,8 @@
 </Card>
 
 <Card>
-  <span slot="title">Genetische Algorithmen</span>
-  <span slot="content"><GeneticAlgorithms /></span>
+  <span slot="title">Stochastische Optimierungsalgorithmen</span>
+  <span slot="content"><StochasticOptimizers /></span>
 </Card>
 
 <Card>

@@ -7,6 +7,7 @@
   import TopologicalSorting from '../components/Graphs/TopologicalSorting.svelte';
   import TransitiveHull from '../components/Graphs/TransitiveHull.svelte';
   import Traversal from '../components/Graphs/Traversal.svelte';
+  import Warshall from '../components/Graphs/Warshall.svelte';
 
   let menuItems = [
     {
@@ -37,6 +38,10 @@
       title: "Traversierung",
       active: false,
     },
+    {
+      title: "Warshall",
+      active: false,
+    }
   ];
 </script>
 
@@ -84,4 +89,8 @@
 
 {#if menuItems[6].active === true}
   <Traversal />
+{/if}
+
+{#if menuItems[7].active === true}
+  <Warshall />
 {/if}
