@@ -20,7 +20,8 @@
 
   // let inputValue = "0,0,-3,-1,-1,1,0,0,-3,0,0,3,0,4,0,0,0,0,0,-4,0,0,1,0,0";
   // let inputValue = "9,10,1,3,2,3,3,4,4,6,4,7,5,4,6,8,6,9,7,6,7,9";
-  let inputValue = "7,10,1,2,1,6,2,3,2,5,4,2,4,7,5,3,5,7,6,4,7,6";
+  // let inputValue = "7,10,1,2,1,6,2,3,2,5,4,2,4,7,5,3,5,7,6,4,7,6";
+  let inputValue = "0,0,10,0,0,5,0,0,0,0,0,0,0,0,0,0,1,3,0,1,0,0,0,0,0,9,0,11,0,0,0,3,0,4,6,0";
 
   let selectedNodes = [];
   let selectedEdges = [];
@@ -45,13 +46,8 @@
         {
           selector: "node",
           style: {
-            label: function (ele) {
-              let data = ele.data("label");
-              return ele.data("label");
-            },
-            "background-color": function (ele) {
-              return ele.data("color") || "LightGrey";
-            },
+            'label': 'data(label)',
+            "background-color": "LightGrey",
             "font-size": "10px",
             "text-justification": "center",
             "text-halign": "center",
@@ -62,14 +58,8 @@
           selector: "edge",
           style: {
             "curve-style": "bezier",
-            "target-arrow-shape": "none",
-            label: function (ele) {
-              let data = ele.data("label");
-              if (data !== undefined && data !== null) {
-                return data;
-              }
-              return "";
-            },
+            "target-arrow-shape": "triangle",
+            'label': 'data(label)',
             "text-margin-y": "-20px",
             "edge-text-rotation": "autorotate",
           },
@@ -185,10 +175,10 @@
     }
     let result = [];
 
-    let nodes = graph.filter("node");
+    let nodes = graph.filter("node").toArray();
     result.push(nodes.length);
 
-    let edges = graph.filter("edge");
+    let edges = graph.filter("edge").toArray();
     result.push(edges.length);
 
     nodes.sort((a, b) => parseInt(a.data("label")) - parseInt(b.data("label")));
@@ -216,27 +206,27 @@
     }
     let result = [];
 
-    let nodes = graph.filter("node");
+    let nodes = graph.filter("node").toArray();
     result.push(nodes.length);
 
-    let edges = graph.filter("edge");
+    let edges = graph.filter("edge").toArray();
     result.push(edges.length);
 
-    nodes.sort((a, b) => parseInt(a.data("label")) - parseInt(b.data("label")));
+    nodes.sort((a, b) =>a.data("label") - b.data("label"));
     for (let i = 0; i < nodes.length; i++) {
       let outEdges = edges.filter(
         (edge) => edge.source().data("label") === nodes[i].data("label")
       );
       outEdges.sort(
         (a, b) =>
-          parseInt(a.target().data("label")) -
-          parseInt(b.target().data("label"))
+          a.target().data("label") -
+          b.target().data("label")
       );
 
       result.push(outEdges.length);
-      result = result.concat(
-        outEdges.map((edge) => edge.target().data("label"))
-      );
+      for(let j = 0; j < outEdges.length; j++) {
+        result.push(outEdges[j].target().data("label"));
+      }
     }
 
     return result;

@@ -8,6 +8,7 @@
   import TransitiveHull from '../components/Graphs/TransitiveHull.svelte';
   import Traversal from '../components/Graphs/Traversal.svelte';
   import Warshall from '../components/Graphs/Warshall.svelte';
+  import GomoryHu from '../components/Graphs/GomoryHu.svelte';
 
   let menuItems = [
     {
@@ -41,7 +42,11 @@
     {
       title: "Warshall",
       active: false,
-    }
+    },
+    {
+      title: "Gomory-Hu",
+      active: false,
+    },
   ];
 </script>
 
@@ -93,4 +98,8 @@
 
 {#if menuItems[7].active === true}
   <Warshall />
+{/if}
+
+{#if menuItems[8].active === true}
+  <GomoryHu />
 {/if}

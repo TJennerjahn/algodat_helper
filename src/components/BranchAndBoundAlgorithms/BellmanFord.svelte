@@ -29,7 +29,7 @@
         node: doc,
       };
     });
-    let edges = cyGraph.edges();
+    let edges = cyGraph.edges().toArray();
 
     console.log("nodes: ", nodes);
 

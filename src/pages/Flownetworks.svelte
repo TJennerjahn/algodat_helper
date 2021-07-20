@@ -3,12 +3,14 @@
   import MinCutMaxFlow from "../components/Flownetworks/MinCutMaxFlow.svelte";
   import FordFulkerson from "../components/Flownetworks/FordFulkerson.svelte";
   import PushRelabel from '../components/Flownetworks/PushRelabel.svelte';
+  import Residualgraph from '../components/Flownetworks/Residualgraph.svelte';
 
   let menuItems = [
     { title: "Flowbuilder", active: true },
     { title: "Min-Cut Max-Flow", active: false },
     { title: "Ford-Fulkerson", active: false },
-    { title: "Push Relable", active: false }
+    { title: "Push Relable", active: false },
+    { title: "Residual Graph", active: false }
   ];
 </script>
 
@@ -44,4 +46,8 @@
 
 {#if menuItems[3].active === true}
   <PushRelabel />
+{/if}
+
+{#if menuItems[4].active === true}
+  <Residualgraph />
 {/if}

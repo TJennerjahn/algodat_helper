@@ -4,6 +4,7 @@
   import UnboundedKnapsack from "../components/DynamicProgramming/UnboundedKnapsack.svelte";
   import EditDistance from "../components/DynamicProgramming/EditDistance.svelte";
   import Hirschberg from '../components/DynamicProgramming/Hirschberg.svelte';
+  import WeightedActivitySelection from '../components/DynamicProgramming/WeightedActivitySelection.svelte';
 
   let menuItems = [
     {
@@ -24,6 +25,10 @@
     },
     {
       title: "Hirschberg",
+      active: false,
+    },
+    {
+      title: "Weighted Activity Selection",
       active: true,
     },
   ];
@@ -65,4 +70,8 @@
 
 {#if menuItems[4].active === true}
   <Hirschberg />
+{/if}
+
+{#if menuItems[5].active === true}
+  <WeightedActivitySelection />
 {/if}
