@@ -130,6 +130,7 @@
       } else if (e.target.isEdge()) {
         selectedEdges = [e.target];
         console.log("You tapped an Edge");
+        document.getElementById("input").focus();
       }
     });
 

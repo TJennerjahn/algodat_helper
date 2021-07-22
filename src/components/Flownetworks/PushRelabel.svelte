@@ -66,7 +66,7 @@
         return n.data("isSource") === false && n.data("isSink") === false;
       })
       .toArray();
-    numberNodes.sort((a, b) => a.data("label") - b.data("label"));
+    numberNodes.sort((a, b) => b.data("label") - a.data("label"));
     console.log("numbernodes", numberNodes);
     sortedNodes = sortedNodes.concat(numberNodes);
     sortedNodes.push(nodes.find((n) => n.data("isSink") === true));
@@ -88,11 +88,11 @@
         console.log(`Checking Node: ${sortedNodes[i].data("label")}`);
         // get all outgoing edges
         let outgoingEdges = graph
-          .edges()
+          .edges().toArray()
           .filter((e) => e.data("source") === sortedNodes[i].data("id"));
         // sort outgoing edges by target node label
         outgoingEdges.sort(
-          (a, b) => a.target().data("label") - b.target().data("label")
+          (a, b) => b.target().data("label") - a.target().data("label")
         );
 
         let wasPushable = true;
@@ -196,14 +196,14 @@
         }
 
         // sort excess nodes by label
-        let excessNodes = graph.nodes().filter((n) => {
+        let excessNodes = graph.nodes().toArray().filter((n) => {
           return (
             n.data("isSource") === false &&
             n.data("isSink") === false &&
             n.data("excess") > 0
           );
         });
-        excessNodes.sort((a, b) => a.data("label") - b.data("label"));
+        excessNodes.sort((a, b) => b.data("label") - a.data("label"));
         // relabel smallest excess nodes so that it is one higher than the next smallest node
         let outGoingEdges = edges.filter((e) => {
           return (

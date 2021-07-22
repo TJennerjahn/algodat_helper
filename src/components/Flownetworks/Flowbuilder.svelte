@@ -31,7 +31,7 @@
           group: "nodes",
           data: {
             id: nanoid(),
-            label: "T",
+            label: 5,
             isSource: false,
             isSink: true,
           },
@@ -40,7 +40,7 @@
           group: "nodes",
           data: {
             id: nanoid(),
-            label: "S",
+            label: 1,
             isSource: true,
             isSink: false,
           },
@@ -124,7 +124,7 @@
             group: "nodes",
             data: {
               id: nanoid(),
-              label: e.cy.filter("node").length - 1,
+              label: e.cy.filter("node").length,
               isSource: false,
               isSink: false,
             },
@@ -142,6 +142,7 @@
       } else if (e.target.isEdge()) {
         selectedEdges = [e.target];
         console.log("You tapped an Edge");
+        document.getElementById("input").focus();
       }
     });
 
